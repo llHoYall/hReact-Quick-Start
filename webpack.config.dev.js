@@ -1,40 +1,40 @@
-const webpack = require("webpack");
-const path = require("path");
-const HtmlWebPackPlugin = require("html-webpack-plugin");
+const webpack = require('webpack');
+const path = require('path');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: "development",
-  entry: "./src/index.js",
+  mode: 'development',
+  entry: './src/index.js',
   plugins: [
     new HtmlWebPackPlugin({
-      template: "./public/index.html",
-      filename: "index.html"
+      template: './public/index.html',
+      filename: 'index.html',
     }),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
   ],
   module: {
     rules: [
       {
         test: /\.html$/,
-        use: ["html-loader"]
+        use: ['html-loader'],
       },
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ["babel-loader"]
-      }
-    ]
+        use: ['babel-loader'],
+      },
+    ],
   },
   resolve: {
-    extensions: [".js", ".jsx"]
+    extensions: ['.js', '.jsx'],
   },
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "[name].js"
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].js',
   },
-  devtool: "cheap-module-eval-source-map",
+  devtool: 'cheap-module-eval-source-map',
   devServer: {
-    contentBase: "./dist",
-    hot: true
-  }
+    contentBase: './dist',
+    hot: true,
+  },
 };

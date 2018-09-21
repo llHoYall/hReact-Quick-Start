@@ -1,4 +1,7 @@
 {
   "editor.formatOnSave": true,
-  "javascript.format.enable": false
+  "eslint.autoFixOnSave": false,
+  "javascript.format.enable": false,
+  "prettier.eslintIntegration": true,
+  "prettier.stylelintIntegration": true
 }
